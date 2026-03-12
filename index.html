@@ -149,63 +149,53 @@
             display: flex; align-items: center; gap: 8px; transition: var(--transition);
         }
 
-        /* Banner de Contato Responsivo */
+        /* Banner de Contato Responsivo - Design Delicado */
         .contact-section { padding: 40px 0 20px; }
         .contact-banner {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-brown) 100%);
-            border-radius: var(--radius-lg); padding: clamp(30px, 6vw, 40px) clamp(20px, 6vw, 50px);
-            display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 30px;
-            box-shadow: 0 25px 50px rgba(35, 24, 17, 0.25); position: relative; overflow: hidden;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #3a271a 100%);
+            border-radius: var(--radius-lg); padding: clamp(35px, 6vw, 55px) clamp(20px, 5vw, 40px);
+            display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px;
+            box-shadow: 0 15px 45px rgba(35, 24, 17, 0.15); position: relative; overflow: hidden;
             text-align: center;
         }
-        @media (min-width: 992px) {
-            .contact-banner { flex-direction: row; text-align: left; }
-        }
         
-        .contact-banner::before { content: ''; position: absolute; top: 0; left: 0; width: 8px; height: 100%; background: var(--accent-gold); }
-        .contact-title { flex: 0 0 35%; }
-        .contact-title h2 { font-family: var(--font-serif); color: var(--accent-gold-light); font-size: clamp(1.5rem, 5vw, 1.8rem); margin: 0; line-height: 1.2; }
-        .contact-objective-small { color: rgba(255, 255, 255, 0.9); font-size: 0.95rem; margin-top: 10px; line-height: 1.4; font-weight: 300; }
+        /* Faixa dourada no topo mais sutil e fina */
+        .contact-banner::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: var(--accent-gold); opacity: 0.8; }
+        
+        .contact-title { width: 100%; max-width: 800px; }
+        .contact-title h2 { font-family: var(--font-serif); color: var(--accent-gold-light); font-size: clamp(1.6rem, 5vw, 2.1rem); margin: 0 0 8px 0; line-height: 1.2; font-weight: 500; letter-spacing: 0.5px; }
+        .contact-objective-small { color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; line-height: 1.6; font-weight: 300; margin: 0 auto; max-width: 650px; }
 
-        .contact-info-strip { display: flex; flex-direction: column; flex-wrap: wrap; gap: 15px; flex: 1; justify-content: center; width: 100%; }
-        @media (min-width: 600px) {
-            .contact-info-strip { flex-direction: row; width: auto; }
-        }
+        /* Distribuição orgânica e suave como "tags" */
+        .contact-info-strip { display: flex; flex-direction: row; flex-wrap: wrap; gap: 10px; justify-content: center; width: 100%; align-items: center; }
         
         .contact-info-strip div { 
-            display: flex; align-items: center; gap: 8px; color: #fff; font-size: 0.95rem; 
-            background: rgba(255,255,255,0.08); padding: 12px 18px; border-radius: 12px; 
-            border: 1px solid rgba(255,255,255,0.1); justify-content: center;
+            display: flex; align-items: center; justify-content: center; gap: 8px; color: #fdfdfd; font-size: 0.85rem; font-weight: 300;
+            background: rgba(255,255,255,0.03); padding: 8px 18px; border-radius: 30px; 
+            border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(5px); transition: var(--transition);
         }
-        @media (min-width: 600px) {
-            .contact-info-strip div { white-space: nowrap; justify-content: flex-start; }
-        }
+        .contact-info-strip div i { color: var(--accent-gold-light); font-size: 0.8rem; opacity: 0.9; }
+        .contact-info-strip div:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.25); }
 
-        .contact-actions { display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 300px; }
-        @media (min-width: 992px) {
-            .contact-actions { width: auto; max-width: none; }
-        }
+        .contact-actions { display: flex; flex-direction: row; flex-wrap: wrap; gap: 12px; width: 100%; align-items: center; justify-content: center; margin-top: 8px; }
         
         .btn-modern { 
-            background: transparent; color: var(--accent-gold-light); padding: 14px 28px; 
-            border-radius: 12px; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; 
-            border: 1px solid var(--accent-gold-light); cursor: pointer; transition: var(--transition); 
-            display: flex; align-items: center; gap: 10px; text-decoration: none; justify-content: center;
+            background: transparent; color: var(--accent-gold-light); padding: 10px 24px; 
+            border-radius: 30px; font-weight: 500; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;
+            border: 1px solid rgba(232, 210, 161, 0.4); cursor: pointer; transition: var(--transition); 
+            display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none;
         }
-        .btn-modern.primary { background: var(--accent-gold); color: var(--primary-dark); border: none; animation: pulseGlow 2s infinite; }
+        .btn-modern:hover { border-color: var(--accent-gold-light); background: rgba(232, 210, 161, 0.05); }
         
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 0 0 0 rgba(201, 160, 80, 0.6); }
-            70% { box-shadow: 0 0 0 15px rgba(201, 160, 80, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(201, 160, 80, 0); }
-        }
+        .btn-modern.primary { background: var(--accent-gold); color: var(--primary-dark); border: none; font-weight: 600; }
+        .btn-modern.primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(201, 160, 80, 0.25); }
 
         /* ==========================================================================
            4. IMPRESSÃO (PDF) - CORREÇÃO DEFINITIVA DE ESPAÇAMENTO E QUEBRA DE PÁGINA
            ========================================================================== */
         @media print {
             @page { size: A4; margin: 0 !important; }
-            html, body { width: 210mm !important; height: auto !important; background-color: #FFFFFF !important; overflow: visible !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            html, body { width: 210mm !important; height: auto !important; background-color: #FFFFFF !important; overflow: visible !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; margin: 0 !important; padding: 0 !important; }
             * { animation: none !important; transition: none !important; box-shadow: none !important; backdrop-filter: none !important; transform: none !important; }
             .ambient-light, .contact-actions { display: none !important; }
             .reveal { opacity: 1 !important; visibility: visible !important; transform: none !important; }
@@ -250,13 +240,14 @@
             .tool-tag { font-size: 8pt !important; padding: 1.5px 5px !important; border: 0.5pt solid #ccc !important; background: transparent !important; }
 
             .contact-section { padding: 4mm 0 0 0 !important; }
-            .contact-banner { padding: 4mm 6mm !important; flex-direction: row !important; flex-wrap: nowrap !important; background: var(--primary-dark) !important; width: 100% !important; border: none !important; justify-content: space-between !important; align-items: center !important; }
-            .contact-banner::before { width: 4px !important; }
-            .contact-title h2 { font-size: 11pt !important; color: var(--accent-gold-light) !important; }
+            .contact-banner { padding: 4mm 6mm !important; flex-direction: row !important; flex-wrap: nowrap !important; background: var(--primary-dark) !important; width: 100% !important; border: none !important; justify-content: space-between !important; align-items: center !important; text-align: left !important; }
+            .contact-banner::before { width: 4px !important; height: 100% !important; left: 0 !important; top: 0 !important; }
+            .contact-title { width: auto !important; max-width: 250px !important; flex: 0 0 35% !important; }
+            .contact-title h2 { font-size: 11pt !important; color: var(--accent-gold-light) !important; margin-bottom: 2px !important; }
             .contact-objective-small { font-size: 7.5pt !important; color: #eee !important; margin-top: 2px !important; max-width: 250px !important; }
             
             .contact-info-strip { flex: 1 !important; justify-content: flex-end !important; display: flex !important; flex-wrap: wrap !important; gap: 2mm !important; }
-            .contact-info-strip div { font-size: 8pt !important; background: rgba(255, 255, 255, 0.1) !important; border: none !important; padding: 2px 6px !important; color: #fff !important; white-space: nowrap !important; }
+            .contact-info-strip div { font-size: 8pt !important; background: rgba(255, 255, 255, 0.1) !important; border: none !important; padding: 2px 6px !important; color: #fff !important; white-space: nowrap !important; width: auto !important; max-width: none !important; }
         }
 
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
@@ -445,8 +436,9 @@
                 </div>
 
                 <div class="contact-actions">
+                    <a href="https://www.linkedin.com/in/caroline-medeiros-39612b303/" target="_blank" class="btn-modern outline"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
                     <a href="https://wa.me/5535992416110" target="_blank" class="btn-modern outline"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-                    <button onclick="window.print()" class="btn-modern primary"><i class="fa-solid fa-file-pdf"></i> Salvar PDF</button>
+                    <button type="button" onclick="imprimirCurriculo()" class="btn-modern primary"><i class="fa-solid fa-file-pdf"></i> Salvar PDF</button>
                 </div>
             </div>
         </section>
@@ -460,6 +452,15 @@
             const idade = new Date().getFullYear() - anoNascimento;
             document.getElementById('idade-web').textContent = idade;
         }
+
+        function imprimirCurriculo() {
+            // Em dispositivos móveis, um pequeno delay de 300ms ajuda o navegador 
+            // a processar a interface antes de chamar a caixa de impressão/PDF.
+            setTimeout(function() {
+                window.print();
+            }, 300);
+        }
+
         function reveal() {
             const reveals = document.querySelectorAll(".reveal");
             for (let i = 0; i < reveals.length; i++) {
